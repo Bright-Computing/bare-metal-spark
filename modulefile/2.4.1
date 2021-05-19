@@ -1,0 +1,14 @@
+#%Module1.0#######################################################################
+## docker modulefile
+##
+proc ModulesHelp { } {
+
+        puts stderr "\tAdds Spark to your environment"
+}
+
+module-whatis    "Adds Spark to your environment"
+
+set              spark_root           /cm/shared/apps/spark/current
+
+prepend-path     PATH                 $spark_root/bin
+prepend-path     MANPATH              $spark_root/man

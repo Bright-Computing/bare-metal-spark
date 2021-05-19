@@ -1,0 +1,13 @@
+[Unit]
+Description=Apache Spark Master
+After=network.target
+
+[Service]
+PrivateTmp=true
+Type=simple
+PIDFile=/tmp/spark-master.pid
+ExecStart=/bin/sh -c "SPARK_NO_DAEMONIZE=1 /cm/shared/apps/spark/current/sbin/start-master.sh"
+
+[Install]
+WantedBy=multi-user.target
+
